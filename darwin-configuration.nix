@@ -93,4 +93,5 @@
 
   # Enable support for Linux builds
   nix.linux-builder.enable = true;
+  nixpkgs.config.allowUnfree = true;
 }
