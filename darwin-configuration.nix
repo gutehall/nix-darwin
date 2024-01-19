@@ -49,6 +49,7 @@
     pkgs.spotify
     pkgs.cyberduck
     pkgs.minecraft
+    pkgs.google-chrome
   ];
 
   # Use a custom configuration.nix location.
@@ -75,15 +76,27 @@
 
   # Setting some defaults
   system.defaults = {
-    dock.mru-spaces = false;
-    finder.AppleShowAllExtensions = true;
-    # NSGlobalDomain.AppleShowAllExtensions = bool;
-    finder.ShowPathbar = true;
-    finder.ShowStatusbar = true;
+
+    dock = {
+      autohide = false;
+      show-recents = false;
+      launchanim = true;
+      orientation = "bottom";
+      tilesize = 48;
+      mru-spaces = false;
+    };
+
+    finder = {
+      AppleShowAllExtensions = true;
+      ShowPathbar = true;
+      ShowStatusbar = true;
+    };
+
     loginwindow.GuestEnabled = false;
     menuExtraClock.ShowDate = 0;
     menuExtraClock.ShowDayOfWeek = bool;
     trackpad.TrackpadRightClick = bool;
+    NSGlobalDomain.AppleShowAllExtensions = bool;
   };
 
   # Enable support for x86_64
